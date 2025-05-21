@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Mathematics - Trigonometry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../../css/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar-nav {
+            flex-direction: row !important;
+        }
+
+        .nav-item {
+            margin-right: 15px;
+            /* Adjust spacing as needed */
+            position: relative;
+            /* For dropdown positioning */
+        }
+
+        .dropdown-menu {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #82929A;
+            /* Adjust background color */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Add shadow for visual separation */
+            z-index: 1000;
+        }
+
+        /* Hide the dropdown-menu by default*/
+        .nav-item .dropdown-menu {
+            display: none;
+        }
+
+        /* Show it on hover */
+        .nav-item:hover .dropdown-menu,
+        .nav-item.show .dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 8px 15px;
+            display: block;
+            color: #333;
+            /* Adjust text color */
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            /* Adjust hover background color */
+        }
+
+        .navbar-toggler {
+            border: none;
+            /* Remove default border */
+            background: transparent !important;
+            /* Remove background */
+        }
+
+        .trigonometry-section {
+            padding-top: 100px;
+            /* Adjust as needed */
+        }
+
+        .topic-list {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic-list h3 {
+            margin-bottom: 10px;
+        }
+
+        .topic-list p {
+            margin-bottom: 20px;
+            color: #818992;
+        }
+        p {
+        color: #fff
+        }
+        .topic-list p {
+        color: #fff;
+        }
+        h3 {
+            color:#E4AA7C
+        }
+        .footer-copy {
+	    background: #ffffff;
+	    font-size: 13px;
+	    text-align: center;
+	    padding:15px 0px;
+        }
+        .footer-copy p {
+	    margin-bottom:0px;
+        color: #000000;
+        }
+        .navbar-logo img {
+            width: 120px;
+        }
+        .hero-section {
+            padding-top: 200px;
+        /* change to adjust spacing*/
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand navbar-logo" href="../../index.html"> <img src="../../images/logo.png"
+                        alt="logo" class="logo-1"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"> <a class="nav-link" href="../../index.html" data-page="home">Home</a> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMath" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-page="math">
+                                Math
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMath">
+                                <a class="dropdown-item" href="trig.html">Trigonometry</a>
+                                <a class="dropdown-item" href="../../under_const.html">Pre-Calculus</a>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus I</a>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus II</a>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus III</a>
+                                <!-- Add more math topics here -->
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPhysics" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Physics
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownPhysics">
+                                <a class="dropdown-item" href="../../under_const.html">Physics I</a>
+                                <a class="dropdown-item" href="../../under_const.html">Physics II</a>
+                                <a class="dropdown-item" href="../../under_const.html">Physics III</a>
+                                <!-- Add more physics topics here -->
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="trigonometry" class="hero-section banner trigonometry-section section-padding">
+            <div class="container">
+                <h2 class="white">Trigonometry Topics</h2>
+                <p>Explore a wide range of trigonometry concepts from angles to parametric equations, designed to give
+                    you a comprehensive understanding of this crucial area of mathematics.</p>
+
+                <div class="topic-list">
+                    <h3 class ="outlined-text"><a href="lesson1-1.html">1.1. Angles and Their Measure</a></h3>
+                    <p>Learn about the different types of angles, how to measure them in degrees and radians, and their
+                        significance in trigonometry. <br>
+                    </p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-2.html">1.2. Right Triangle Trigonometry</a></h3>
+                    <p>An introduction to the fundamental trigonometric functions in right-angled triangles: sine, cosine,
+                        and tangent. <br>
+                    </p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-3.html">1.3. Computing the Values of Trigonometric Functions of Acute Angles</a>
+                    </h3>
+                    <p>Understand how to compute the values of trigonometric functions for acute angles using basic
+                        formulas and ratios.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-4.html">1.4. Trigonometric Functions of Any Angle</a></h3>
+                    <p>Extend trigonometric functions to any angle, and explore how these functions behave in all four
+                        quadrants of the unit circle.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-5.html">1.5. Unit Circle Approach: Properties of Trigonometric Functions</a></h3>
+                    <p>Dive into the unit circle and explore how it helps define the sine, cosine, and tangent functions
+                        for any angle.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-6.html">1.6. Graphs of Sine and Cosine Functions</a></h3>
+                    <p>Learn how to graph the sine and cosine functions, and explore their periodic nature. <br>
+                    </p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-7.html">1.7. Graphs of Tangent, Cotangent, and Cosecant</a></h3>
+                    <p>Explore the graphs of other important trigonometric functions like tangent, cotangent, and
+                        cosecant.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson1-8.html">1.8. Phase Shift: Sinusoidal Curve Fitting</a></h3>
+                    <p>Understand phase shifts and how sinusoidal curves can be fitted to data for practical
+                        applications.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-1.html">2.1. Inverse Sine, Cosine, and Tangent Functions</a></h3>
+                    <p>Explore the inverse trigonometric functions and their applications in solving equations and
+                        modeling scenarios.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-2.html">2.2. Inverse Trigonometric Functions (continued)</a></h3>
+                    <p>Continue exploring the intricacies of inverse trigonometric functions, with examples and use
+                        cases.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-3.html">2.3. Trigonometric Equations</a></h3>
+                    <p>Learn how to solve various types of trigonometric equations and apply these skills to real-world
+                        problems.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-4.html">2.4. Trigonometric Identities</a></h3>
+                    <p>Dive deep into trigonometric identities such as Pythagorean, reciprocal, and quotient identities,
+                        and see how they simplify complex problems.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-5.html">2.5. Sum and Difference Formulas</a></h3>
+                    <p>Explore the sum and difference formulas for trigonometric functions and how they can be used to
+                        simplify expressions.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-6.html">2.6. Double-angle and Half-angle Formulas</a></h3>
+                    <p>Learn how to apply double-angle and half-angle formulas to solve trigonometric equations more
+                        easily.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson2-7.html">2.7. Product-to-Sum and Sum-to-Product Formulas</a></h3>
+                    <p>Convert products of trigonometric functions into sums or differences and vice versa using these
+                        formulas.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson3-1.html">3.1. Applications Involving Right Triangles</a></h3>
+                    <p>Discover how trigonometric principles apply to real-world situations involving right triangles.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson3-2.html">3.2. Law of Sines</a></h3>
+                    <p>Learn the law of sines and how it applies to solving oblique triangles.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson3-3.html">3.3. Law of Cosines</a></h3>
+                    <p>Understand the law of cosines and its applications to non-right triangles.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson3-4.html">3.4. Simple Harmonic Motion</a></h3>
+                    <p>See how trigonometry models simple harmonic motion, which is fundamental in physics and
+                        engineering.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson4-1.html">4.1. Polar Coordinates</a></h3>
+                    <p>Explore the polar coordinate system and learn how it differs from Cartesian coordinates.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson4-2.html">4.2. Polar Equations and Graphs</a></h3>
+                    <p>Discover how to plot and interpret polar equations on the polar coordinate system. <br>
+                    </p>
+
+                    <h3 class ="outlined-text"><a href="lesson4-3.html">4.3. Vectors</a></h3>
+                    <p>Learn the basics of vectors, their magnitudes, and directions, and how trigonometry is used to
+                        resolve them.</p>
+
+                    <h3 class ="outlined-text"><a href="lesson5-1.html">5.1. Plane Curves and Parametric Equations</a></h3>
+                    <p>Investigate the world of parametric equations and plane curves, and how they are used to
+                        represent motion.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-copy">
+        <div class="container">
+            <p>© 2024 Dragon Mathematics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="../../js/scrollIt.min.js"></script>
+    <script src="../../js/wow.min.js"></script>
+    <script>
+        wow = new WOW();
+        wow.init();
+        $(document).ready(function (e) {
+
+            $('#video-icon').on('click', function (e) {
+                e.preventDefault();
+                $('.video-popup').css('display', 'flex');
+                $('.iframe-src').slideDown();
+            });
+            $('.video-popup').on('click', function (e) {
+                var $target = e.target.nodeName;
+                var video_src = $(this).find('iframe').attr('src');
+                if ($target != 'IFRAME') {
+                    $('.video-popup').fadeOut();
+                    $('.iframe-src').slideUp();
+                    $('.video-popup iframe').attr('src', " ");
+                    $('.video-popup iframe').attr('src', video_src);
+                }
+            });
+
+            $('.slider').bxSlider({
+                pager: false
+            });
+        });
+
+        $(window).on("scroll", function () {
+
+            var bodyScroll = $(window).scrollTop(),
+                navbar = $(".navbar");
+
+            if (bodyScroll > 50) {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.addClass("nav-scroll");
+
+            } else {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.removeClass("nav-scroll");
+            }
+
+        });
+        $(window).on("load", function () {
+            var bodyScroll = $(window).scrollTop(),
+                navbar = $(".navbar");
+
+            if (bodyScroll > 50) {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.addClass("nav-scroll");
+            } else {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.removeClass("nav-scroll");
+            }
+
+            $.scrollIt({
+
+                easing: 'swing',      // the easing function for animation
+                scrollTime: 900,       // how long (in ms) the animation takes
+                activeClass: 'active', // class given to the active nav element
+                onPageChange: null,    // function(pageIndex) that is called when page is changed
+                topOffset: -63
+            });
+        });
+
+        $(document).ready(function () {
+            $('.nav-item.dropdown').hover(
+                function () {
+                    $(this).addClass('show');
+                },
+                function () {
+                    setTimeout(() => {
+                        if (!$(this).find('.dropdown-menu:hover').length) {
+                            $(this).removeClass('show');
+                        }
+                    }, 20);
+                }
+            );
+
+            $('.dropdown-menu').hover(
+                function () {
+                    $(this).parent().addClass('show');
+                },
+                function () {
+                    setTimeout(() => {
+                        if (!$(this).is(':hover')) {
+                            $(this).parent().removeClass('show');
+                        }
+                    }, 100);
+                }
+            );
+
+            // Get the current page's filename
+            var path = window.location.pathname;
+            var page = path.split("/").pop().split('.')[0];
+
+            // Determine which link to highlight based on page
+            var activePage = "home";
+            if (page === 'trig') {
+                activePage = "math"
+            }
+
+            // Loop through each navigation item and set active class
+            $('.navbar-nav .nav-item a[data-page]').each(function () {
+                const dataPage = $(this).attr('data-page');
+                if (dataPage === activePage) {
+                    $(this).addClass('active'); // add the 'active' class
+                } else {
+                    $(this).removeClass('active'); // remove if not active page
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

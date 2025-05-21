@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Mathematics - Trigonometry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../../css/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar-nav {
+            flex-direction: row !important;
+        }
+
+        .nav-item {
+            margin-right: 15px;
+            /* Adjust spacing as needed */
+            position: relative;
+            /* For dropdown positioning */
+        }
+
+        .dropdown-menu {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #82929A;
+            /* Adjust background color */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Add shadow for visual separation */
+            z-index: 1000;
+        }
+
+        /* Hide the dropdown-menu by default*/
+        .nav-item .dropdown-menu {
+            display: none;
+        }
+
+        /* Show it on hover */
+        .nav-item:hover .dropdown-menu,
+        .nav-item.show .dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 8px 15px;
+            display: block;
+            color: #333;
+            /* Adjust text color */
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            /* Adjust hover background color */
+        }
+
+        .navbar-toggler {
+            border: none;
+            /* Remove default border */
+            background: transparent !important;
+            /* Remove background */
+        }
+
+        .trigonometry-section {
+            padding-top: 100px;
+            /* Adjust as needed */
+        }
+
+        .topic-list {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic-list h3 {
+            margin-bottom: 10px;
+        }
+
+        .topic-list p {
+            margin-bottom: 20px;
+            color: #818992;
+        }
+
+        .hero-section {
+            padding-top: 200px;
+            text-align: center;
+            /* change to adjust spacing*/
+        }
+        p {
+        color: #fff
+        }
+        .topic-list p {
+        color: #fff;
+        }
+        h3 {
+            color:#E4AA7C
+        }
+        .footer-copy {
+	    background: #ffffff;
+	    font-size: 13px;
+	    text-align: center;
+	    padding:15px 0px;
+        }
+        .footer-copy p {
+	    margin-bottom:0px;
+        color: #000000;
+        }
+        .navbar-logo img {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand navbar-logo" href="../../index.html"> <img src="../../images/logo.png"
+                        alt="logo" class="logo-1"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"> <a class="nav-link" href="../../index.html" data-page="home">Home</a> </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMath" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-page="math">
+                                Math
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMath">
+                                <a class="dropdown-item" href="trig.html">Trigonometry</a>
+                                <a class="dropdown-item" href="#pre-calc">Pre-Calculus</a>
+                                <a class="dropdown-item" href="#calc1">Calculus I</a>
+                                <a class="dropdown-item" href="#calc2">Calculus II</a>
+                                <a class="dropdown-item" href="#calc3">Calculus III</a>
+                                <!-- Add more math topics here -->
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPhysics" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Physics
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownPhysics">
+                                <a class="dropdown-item" href="#physics1">Physics I</a>
+                                <a class="dropdown-item" href="#physics2">Physics II</a>
+                                <a class="dropdown-item" href="#physics3">Physics III</a>
+                                <!-- Add more physics topics here -->
+                            </div>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="#tutoring" data-scroll-nav="3">Tutoring</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#blog" data-scroll-nav="4">Blog</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#about" data-scroll-nav="5">About Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#contact" data-scroll-nav="6">Contact</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="trigonometry" class="hero-section banner trigonometry-section section-padding">
+        <div class="container">
+            <h2 class="white">Learn Trigonometry</h2>
+            <p>Choose how you'd like to learn: through detailed online tutorials or by watching video lectures.</p>
+
+            <div class="button-container">
+                <a href="trig_text.html" class="choice-button">Explore Online Modules</a>
+                <a href="trig_videos.html" class="choice-button">Explore Video Tutorials</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-copy">
+        <div class="container">
+            <p>© 2024 Dragon Mathematics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="../../js/scrollIt.min.js"></script>
+    <script src="../../js/wow.min.js"></script>
+    <script>
+        wow = new WOW();
+        wow.init();
+        $(document).ready(function (e) {
+
+            $('#video-icon').on('click', function (e) {
+                e.preventDefault();
+                $('.video-popup').css('display', 'flex');
+                $('.iframe-src').slideDown();
+            });
+            $('.video-popup').on('click', function (e) {
+                var $target = e.target.nodeName;
+                var video_src = $(this).find('iframe').attr('src');
+                if ($target != 'IFRAME') {
+                    $('.video-popup').fadeOut();
+                    $('.iframe-src').slideUp();
+                    $('.video-popup iframe').attr('src', " ");
+                    $('.video-popup iframe').attr('src', video_src);
+                }
+            });
+
+            $('.slider').bxSlider({
+                pager: false
+            });
+        });
+
+        $(window).on("scroll", function () {
+
+            var bodyScroll = $(window).scrollTop(),
+                navbar = $(".navbar");
+
+            if (bodyScroll > 50) {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.addClass("nav-scroll");
+
+            } else {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.removeClass("nav-scroll");
+            }
+
+        });
+        $(window).on("load", function () {
+            var bodyScroll = $(window).scrollTop(),
+                navbar = $(".navbar");
+
+            if (bodyScroll > 50) {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.addClass("nav-scroll");
+            } else {
+                $('.navbar-logo img').attr('src', '../../images/logo.png');
+                navbar.removeClass("nav-scroll");
+            }
+
+            $.scrollIt({
+
+                easing: 'swing',      // the easing function for animation
+                scrollTime: 900,       // how long (in ms) the animation takes
+                activeClass: 'active', // class given to the active nav element
+                onPageChange: null,    // function(pageIndex) that is called when page is changed
+                topOffset: -63
+            });
+        });
+
+        $(document).ready(function () {
+            $('.nav-item.dropdown').hover(
+                function () {
+                    $(this).addClass('show');
+                },
+                function () {
+                    setTimeout(() => {
+                        if (!$(this).find('.dropdown-menu:hover').length) {
+                            $(this).removeClass('show');
+                        }
+                    }, 20);
+                }
+            );
+
+            $('.dropdown-menu').hover(
+                function () {
+                    $(this).parent().addClass('show');
+                },
+                function () {
+                    setTimeout(() => {
+                        if (!$(this).is(':hover')) {
+                            $(this).parent().removeClass('show');
+                        }
+                    }, 100);
+                }
+            );
+
+            // Get the current page's filename
+            var path = window.location.pathname;
+            var page = path.split("/").pop().split('.')[0];
+
+            // Determine which link to highlight based on page
+            var activePage = "math"; // Keep math active as this is the trigonometry landing page
+
+            // Loop through each navigation item and set active class
+            $('.navbar-nav .nav-item a[data-page]').each(function () {
+                const dataPage = $(this).attr('data-page');
+                if (dataPage === activePage) {
+                    $(this).addClass('active'); // add the 'active' class
+                } else {
+                    $(this).removeClass('active'); // remove if not active page
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

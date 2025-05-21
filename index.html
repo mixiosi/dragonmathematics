@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dragon Mathematics</title>
+<link rel="icon" type="image/png" href="images/dragon_icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<!-- Font Google -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    .navbar-nav {
+      flex-direction: row !important;
+    }
+    .nav-item {
+      margin-right: 15px; /* Adjust spacing as needed */
+      position: relative; /* For dropdown positioning */
+    }
+    .dropdown-menu {
+      /* Change this line to 'display: block;' to make the menu visible */
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #82929A; /* Adjust background color */
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow for visual separation */
+      z-index: 1000;
+    }
+      /* Hide the dropdown-menu by default*/
+    .nav-item .dropdown-menu {
+          display: none;
+    }
+
+    /* Show it on hover */
+    .nav-item:hover .dropdown-menu,
+    .nav-item.show .dropdown-menu,
+    .dropdown-menu:hover {
+        display: block;
+    }
+    .dropdown-item {
+      padding: 8px 15px;
+      display: block;
+      color: #333; /* Adjust text color */
+      text-decoration: none;
+    }
+    .dropdown-item:hover {
+      background-color: #f8f9fa; /* Adjust hover background color */
+    }
+    .navbar-toggler {
+      border: none; /* Remove default border */
+      background: transparent !important; /* Remove background */
+    }
+    .trigonometry-section {
+        padding-top: 100px; /* Adjust as needed */
+    }
+    .topic-list {
+        margin-top: 20px;
+    }
+    .topic-list h3 {
+        margin-bottom: 10px;
+    }
+    .topic-list p {
+      margin-bottom: 20px;
+      color: #818992;
+    }
+    .hero-section {
+      padding-top: 200px;
+      padding-bottom: 10px; /* change to adjust spacing*/
+    }
+    a {
+    color: #fad89a;
+    text-decoration: none;
+    font-size: 35px;
+    }
+
+    a:visited {
+    color: #fad89a;  /* Same color as unvisited links */
+    
+    /* Or a different color if you want visited links to be distinct */
+    }
+
+    a:hover {
+    color: #c1b4ff; /* Orange Yellow on hover */
+    text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand navbar-logo" href="#"> <img src="images/logo.png" alt="logo" class="logo-1"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"> <a class="nav-link" href="#home" data-scroll-nav="0">Home</a> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMath" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Math
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMath">
+                                <a class="dropdown-item" href="math/trig/trig.html">Trigonometry</a>
+                                <a class="dropdown-item" href="under_const.html">Pre-Calculus</a>
+                                <a class="dropdown-item" href="under_const.html">Calculus I</a>
+                                <a class="dropdown-item" href="under_const.html">Calculus II</a>
+                                <a class="dropdown-item" href="under_const.html">Calculus III</a>
+                                <!-- Add more math topics here -->
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPhysics" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Physics
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownPhysics">
+                                <a class="dropdown-item" href="under_const.html">Physics I</a>
+                                <a class="dropdown-item" href="under_const.html">Physics II</a>
+                                <a class="dropdown-item" href="under_const.html">Physics III</a>
+                                <!-- Add more physics topics here -->
+                            </div>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="#tutoring" data-scroll-nav="3">Tutoring</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#blog" data-scroll-nav="4">Blog</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#about" data-scroll-nav="5">About Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#contact" data-scroll-nav="6">Contact</a> </li>
+                        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#fabc00', 'C0C419EYSN');kofiwidget2.draw();</script> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section banner" data-scroll-index='0'>
+            <div class="banner-overlay" style="padding-left:250px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                            <div class="banner-text">
+                                <h2 class="white">Dragon Mathematics</h2>
+                                <h6 class="white">Your journey to mastering math and physics begins here.</h6>
+                                <p class="banner-text white">Explore our resources, utilize free math and physics tutorials or schedule a personalized tutoring session via the contact form below.</p>
+                                <div class="cta-buttons">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/dragon1.png" class="img-fluid wow fadeInUp" style="width: 250px; height: auto;" />
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <span class="svg-wave"> <img class="svg-hero" src="images/applight-wave.svg"> </span>
+        </section>
+
+        <section id="features" class="features-section about section-padding prelative" data-scroll-index='1'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sectioner-header text-center">
+                            <h3>Why Choose Dragon Mathematics?</h3>
+                            <span class="line"></span>
+                        </div>
+                        <div class="section-content text-center">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="icon-box wow fadeInUp" data-wow-delay="0.2s"> <i class="fa fa-book" aria-hidden="true"></i>
+                                        <h5>Free Online Modules</h5>
+                                        <p>Structured tutorials with detailed explanations, visualizations, examples, and practice problems for in-depth learning.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="icon-box wow fadeInUp" data-wow-delay="0.4s"> <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                        <h5>Free Video Tutorials</h5>
+                                        <p>Clear, step-by-step video lectures that simplify math and physics through explanations and problem solving.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="icon-box wow fadeInUp" data-wow-delay="0.6s"> <i class="fa fa-chalkboard-teacher" aria-hidden="true"></i>
+                                        <h5>Personalized Tutoring</h5>
+                                        <p>Get one-on-one tutoring tailored to your needs, whether you're preparing for exams or need help with specific topics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section prelative text-center white">
+            <div class="section-padding video-overlay">
+              <div class="container" style="padding-top: 50px; padding-bottom: 50px">
+                <h3 style="padding-bottom: 100px">
+                    <span style="padding-right: 10px;">Check us out on</span>
+                    <img src="images/yt_icon.png" class="img-fluid wow fadeInUp" style="width: 150px; height: auto;" />
+                    <span style="padding-right: 10px;">:</span>
+                  </h3>
+                <i class="fa fa-play" id="video-icon" aria-hidden="true"></i>
+                <div class="video-popup">
+                  <div class="video-src">
+                    <div class="iframe-src">
+                      <iframe src="https://www.youtube.com/embed/xcU6fI9MYTI" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <section id="courses" class="feature section-padding" data-scroll-index='2'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sectioner-header text-center">
+                            <h3>Tutorials</h3>
+                            <span class="line"></span>
+                            <p>Free tutorials!</p>
+                        </div>
+                        <div class="section-content text-center">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="media single-feature wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="media-body text-right media-right-margin">
+                                            <h5><a href="math/trig/trig.html" class ="outlined-text">Trigonometry</a></h5>
+                                            <p>Master the fundamentals of angles, triangles, and trigonometric functions.</p>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 48 48"><path fill="none" stroke="#8E1EFC" stroke-linecap="round" stroke-linejoin="round" d="M28.68 24h-2.15m5.817 0h-2.15m5.818 0h-2.15m5.817 0h-2.15M21.47 24h-2.15m-1.517 0h-2.15m-1.518 0h-2.15m-1.517 0h-2.15M24 15.653v2.15m0 1.517v2.15m0 5.06v2.15m0 1.517v2.15m0 1.518v2.15m0 1.517v2.15m0-27.697v2.15m0-5.817v2.15M10.341 20.712c21.753-22.133 15.177 12.9 27.57 15.682"/><circle cx="24" cy="24" r="21.5" fill="none" stroke="#8E1EFC" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r=".75" fill="#8E1EFC"/></svg>
+                                    </div>
+                                    <div class="media single-feature wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="media-body text-right media-right-margin">
+                                            <h5><a href="under_const.html" class ="outlined-text">Calculus</a></h5>
+                                            <p>Introduction to differential and integral calculus.</p>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="#8E1EFC" d="M11.5 19.1c-.2 1.1-.6 1.9-1.3 2.4s-1.6.6-2.7.4c-.4-.1-1.2-.2-1.5-.4l.5-1.5c.3.1.9.3 1.2.3c1.1.2 1.7-.3 1.9-1.5L12 5.2c.2-1.2.7-2 1.4-2.6c.7-.5 1.7-.7 2.8-.5c.4.1 1.2.2 1.8.5L17.5 4c-.2-.1-.9-.2-1.2-.3c-1.3-.2-2 .4-2.3 1.9z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block d-lg-block">
+                                    <div class="feature-mobile"> <img src="images/dragon1.png" class="img-fluid wow fadeInUp"/> </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="media single-feature wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="media-left icon-border media-right-margin"> <span class="fa fa-rocket" aria-hidden="true"></span> </div>
+                                        <div class="media-body text-left">
+                                            <h5><a href="under_const.html" class ="outlined-text">Physics I</a></h5>
+                                            <p>Principles of motion, forces, and energy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media single-feature wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="media-left icon-border media-right-margin"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 48 48"><g fill="#8E1EFC"><path d="m25 12l-6 9h4v6l6-9h-4z"/><path fill-rule="evenodd" d="M37.91 19.273a13.57 13.57 0 0 1-2.983 7.015C33.965 27.464 31.52 30.82 31 33H17c-.52-2.182-2.968-5.539-3.93-6.715a13.57 13.57 0 0 1-2.98-7.017a13.47 13.47 0 0 1 1.292-7.494a13.8 13.8 0 0 1 5.166-5.67A14.2 14.2 0 0 1 24.002 4c2.638 0 5.222.73 7.454 2.107a13.8 13.8 0 0 1 5.164 5.671a13.47 13.47 0 0 1 1.29 7.495M29.583 31H18.416c-.426-.983-.995-1.968-1.525-2.805a35 35 0 0 0-2.272-3.175a11.57 11.57 0 0 1-2.542-5.983a11.47 11.47 0 0 1 1.1-6.382a11.8 11.8 0 0 1 4.42-4.848A12.2 12.2 0 0 1 24.002 6c2.27 0 4.49.629 6.405 1.81a11.8 11.8 0 0 1 4.418 4.848a11.47 11.47 0 0 1 1.098 6.383a11.57 11.57 0 0 1-2.544 5.981a34 34 0 0 0-2.271 3.175c-.53.837-1.098 1.82-1.524 2.803" clip-rule="evenodd"/><path d="M17 36a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H18a1 1 0 0 1-1-1"/><path fill-rule="evenodd" d="M17 39h14v3a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2zm2 2h10v1H19z" clip-rule="evenodd"/></g></svg></div>
+                                        <div class="media-body text-left">
+                                            <h5><a href="under_const.html" class ="outlined-text">Physics II</a></h5>
+                                            <p>Study of electric and magnetic fields and their interactions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Update the Tutoring Section -->
+        <section id="tutoring" class="team section-padding" data-scroll-index='3'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sectioner-header text-center">
+                            <h3>Tutoring</h3>
+                            <span class="line"></span>
+                            <p>Get personalized help from our expert tutors.</p>
+                        </div>
+                        <div class="section-content text-center">
+                            <!-- Calendly embed widget -->
+                            <div class="calendly-inline-widget" 
+                                data-url="https://calendly.com/dragonmathematics/tutoring"
+                                style="min-width:320px;height:700px;"></div>
+                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="testimonial section-padding" data-scroll-index='4'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sectioner-header text-center white">
+                            <h3>Blog</h3>
+                            <span class="line"></span>
+                            <p class="white">Read our latest articles and insights.</p>
+                        </div>
+
+                        <div class="section-content">
+                            <div class="row">
+                                <div class="offset-md-2 col-md-8 col-sm-12">
+                                    <div class="slider">
+                                        <div class="slider-item">
+                                            <div class="test-text"><span class="title"><span>Mastering Derivatives</span></span> Tips and tricks for understanding derivatives.</div>
+                                        </div>
+                                        <div class="slider-item">
+                                            <div class="test-text"><span class="title"><span>The Beauty of Physics</span></span> Exploring fundamental concepts in physics.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="faq section-padding prelative" data-scroll-index='5'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sectioner-header text-center">
+                            <h3>About Us</h3>
+                            <span class="line"></span>
+                            <p>Learn more about our mission and team.</p>
+                        </div>
+                        <div class="section-content">
+                            <p style="font-size:15px">Dragon Mathematics is dedicated to providing high-quality educational resources for students of all levels. Our goal is to make learning math and physics engaging and accessible. We strive to incorporate nuance and depth that are often overlooked in traditional classroom settings, offering insights and perspectives that foster a deeper understanding of complex concepts. By sharing practical tips, tricks, and intuitive approaches, we empower learners to grasp material more effectively, moving beyond the often stale and one-dimensional methods found in conventional high school or college environments. At Dragon Mathematics, we believe in transforming learning into a dynamic and enriching experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section-padding" data-scroll-index='6'>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sectioner-header text-center">
+                    <h3>Contact Us</h3>
+                    <span class="line"></span>
+                    <p>Get in touch with us for any inquiries.</p>
+                </div>
+                <div class="section-content">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+                            <form id="contact_form" action="https://formspree.io/f/xkgowdwl" method="POST">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" id="your_name" class="form-input w-100" name="name" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" id="email" class="form-input w-100" name="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <input type="text" id="subject" class="form-input w-100" name="subject" placeholder="Subject" required>
+                                <textarea class="form-input w-100" id="message" placeholder="Message" name="message" required></textarea>
+                                <!-- Formspree redirect -->
+                                <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                                <!-- Honeypot spam filter -->
+                                <input type="text" name="_gotcha" style="display:none">
+                                <button class="btn-grad w-100 text-uppercase" type="submit">Send Message</button>
+                            </form>
+                        </div>
+                        <!-- Keep the existing contact info column -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer-copy">
+        <div class="container">
+            <p>© 2024 Dragon Mathematics. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<!-- scrollIt js -->
+<script src="js/scrollIt.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+	wow = new WOW();
+	wow.init();
+$(document).ready(function(e) {
+
+	$('#video-icon').on('click',function(e){
+	e.preventDefault();
+	$('.video-popup').css('display','flex');
+	$('.iframe-src').slideDown();
+	});
+	$('.video-popup').on('click',function(e){
+	var $target = e.target.nodeName;
+	var video_src = $(this).find('iframe').attr('src');
+	if($target != 'IFRAME'){
+	$('.video-popup').fadeOut();
+	$('.iframe-src').slideUp();
+	$('.video-popup iframe').attr('src'," ");
+	$('.video-popup iframe').attr('src',video_src);
+	}
+	});
+
+	$('.slider').bxSlider({
+	pager: false
+	});
+});
+
+$(window).on("scroll",function () {
+
+	var bodyScroll = $(window).scrollTop(),
+	navbar = $(".navbar");
+
+	if(bodyScroll > 50){
+	$('.navbar-logo img').attr('src','images/logo.png');
+	navbar.addClass("nav-scroll");
+
+}else{
+	$('.navbar-logo img').attr('src','images/logo.png');
+	navbar.removeClass("nav-scroll");
+}
+
+});
+$(window).on("load",function (){
+	var bodyScroll = $(window).scrollTop(),
+	navbar = $(".navbar");
+
+	if(bodyScroll > 50){
+	$('.navbar-logo img').attr('src','images/logo.png');
+	navbar.addClass("nav-scroll");
+	}else{
+	$('.navbar-logo img').attr('src','images/logo.png');
+	navbar.removeClass("nav-scroll");
+	}
+
+	$.scrollIt({
+
+	easing: 'swing',      // the easing function for animation
+	scrollTime: 900,       // how long (in ms) the animation takes
+	activeClass: 'active', // class given to the active nav element
+	onPageChange: null,    // function(pageIndex) that is called when page is changed
+	topOffset: -63
+	});
+});
+
+</script>
+<script>
+    $(document).ready(function() {
+      $('.nav-item.dropdown').hover(
+        function() {
+          $(this).addClass('show');
+        },
+        function() {
+            // Delay the removal of the class in case the user is moving the mouse directly to the dropdown menu
+            setTimeout(() => {
+                if (!$(this).find('.dropdown-menu:hover').length) {
+                    $(this).removeClass('show');
+                }
+            }, 20);
+        }
+      );
+
+      $('.dropdown-menu').hover(
+          function() {
+            $(this).parent().addClass('show');
+          },
+          function() {
+            setTimeout(() => {
+              if (!$(this).is(':hover')) {
+                $(this).parent().removeClass('show');
+              }
+            }, 200);
+          }
+      );
+    });
+</script>
+</body>
+</html>

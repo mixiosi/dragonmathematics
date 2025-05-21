@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.1 Plane Curves & Parametric Equations | Dragon Mathematics</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .lesson-hero {
+            background: linear-gradient(135deg, #7a60ff, #cd9ffa);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../images/pattern.png) repeat;
+            opacity: 0.1;
+        }
+
+        .curve-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons .btn {
+            background: #7a60ff;
+            border: 2px solid #ffcb6b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background: #ffcb6b;
+            color: #7a60ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .example-card {
+            border-left: 4px solid #ffcb6b;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+
+<body class="short-page">
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../images/logo.png" alt="Dragon Mathematics" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="mathDropdown" data-toggle="dropdown">
+                                Math
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="../trig/trig.html">Trigonometry</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Calculus</h6>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus I</a>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus II</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../../tutoring.html">Tutoring</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Lesson Content -->
+        <section class="lesson-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../trig/trig.html">Trigonometry</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">5.1 Plane Curves & Parametric Equations</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="display-4 mb-4">Parametric Curves</h1>
+                <p class="lead">Modeling Complex Motion and Shapes</p>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <div class="curve-card">
+                <h2 class="mb-4">Fundamental Concepts</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="example-card">
+                            <h4>Parametric Form</h4>
+                            \[
+                            x = f(t),\ y = g(t)
+                            \]
+                            <p class="text-muted">Example: Circular motion</p>
+                            \[
+                            x = r\cos t,\ y = r\sin t
+                            \]
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="example-card">
+                            <h4>Conversion to Cartesian</h4>
+                            \[
+                            \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \Rightarrow \begin{cases}
+                            x = a\cos t \\
+                            y = b\sin t
+                            \end{cases}
+                            \]
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Advanced Curves</h3>
+                <div class="example-card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Lissajous Figures</h5>
+                            \[
+                            \begin{cases}
+                            x = \sin(at) \\
+                            y = \sin(bt + \phi)
+                            \end{cases}
+                            \]
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Rose Curves</h5>
+                            \[
+                            r = a\cos(k\theta)
+                            \]
+                            <p class="text-muted">k petals if odd</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Cycloid</h5>
+                            \[
+                            \begin{cases}
+                            x = r(t - \sin t) \\
+                            y = r(1 - \cos t)
+                            \end{cases}
+                            \]
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Motion Analysis</h3>
+                <div class="example-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Position Vector</h5>
+                            \[
+                            \vec{r}(t) = \langle x(t), y(t) \rangle
+                            \]
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Velocity Vector</h5>
+                            \[
+                            \vec{v}(t) = \langle \frac{dx}{dt}, \frac{dy}{dt} \rangle
+                            \]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-problems mt-5">
+                    <h3>Practice Exercise</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Convert to Cartesian form:</h5>
+                            \[
+                            x = 2\cos t,\ y = 3\sin t
+                            \]
+                            <button class="btn btn-sm btn-outline-warning" data-toggle="collapse" data-target="#solution1">Show Solution</button>
+                            <div id="solution1" class="collapse mt-3">
+                                \[
+                                \frac{x}{2} = \cos t,\ \frac{y}{3} = \sin t
+                                \]
+                                \[
+                                \left(\frac{x}{2}\right)^2 + \left(\frac{y}{3}\right)^2 = 1
+                                \]
+                                \[
+                                \frac{x^2}{4} + \frac{y^2}{9} = 1
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="lesson4-4.html" class="btn btn-primary shadow">
+                ← Previous Lesson
+            </a>
+            <a href="../trig/trig_text.html" class="btn btn-primary shadow">
+                Back to Trigonometry
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-copy bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Dragon Mathematics. All rights reserved.</p>
+            <p class="mb-0">Educational content licensed under CC BY-NC-SA 4.0</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

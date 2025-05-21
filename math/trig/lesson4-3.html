@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 Vectors | Dragon Mathematics</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .lesson-hero {
+            background: linear-gradient(135deg, #7a60ff, #cd9ffa);
+            padding: 120px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../images/pattern.png) repeat;
+            opacity: 0.1;
+        }
+
+        .vector-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons .btn {
+            background: #7a60ff;
+            border: 2px solid #ffcb6b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons .btn:hover {
+            background: #ffcb6b;
+            color: #7a60ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .example-card {
+            border-left: 4px solid #ffcb6b;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+
+<body class="short-page">
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../images/logo.png" alt="Dragon Mathematics" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="mathDropdown" data-toggle="dropdown">
+                                Math
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="../trig/trig.html">Trigonometry</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Calculus</h6>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus I</a>
+                                <a class="dropdown-item" href="../../under_const.html">Calculus II</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../../tutoring.html">Tutoring</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Lesson Content -->
+        <section class="lesson-hero">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../trig/trig.html">Trigonometry</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">4.3 Vectors</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="display-4 mb-4">Vector Mathematics</h1>
+                <p class="lead">Mastering Directional Quantities in Trigonometry</p>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <div class="vector-card">
+                <h2 class="mb-4">Core Vector Concepts</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="example-card">
+                            <h4>Vector Components</h4>
+                            \[
+                            \vec{v} = \|\vec{v}\|\cos\theta\,\hat{i} + \|\vec{v}\|\sin\theta\,\hat{j}
+                            \]
+                            <p class="text-muted">Where θ is angle from x-axis</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="example-card">
+                            <h4>Dot Product</h4>
+                            \[
+                            \vec{a} \cdot \vec{b} = \|\vec{a}\|\|\vec{b}\|\cos\theta
+                            \]
+                            <p class="text-muted">Measures vector alignment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Vector Operations</h3>
+                <div class="example-card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Addition</h5>
+                            \[
+                            \vec{a} + \vec{b} = (a_x + b_x)\hat{i} + (a_y + b_y)\hat{j}
+                            \]
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Scalar Multiplication</h5>
+                            \[
+                            c\vec{a} = (ca_x)\hat{i} + (ca_y)\hat{j}
+                            \]
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Magnitude</h5>
+                            \[
+                            \|\vec{a}\| = \sqrt{a_x^2 + a_y^2}
+                            \]
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5">Worked Examples</h3>
+                <div class="example-card">
+                    <h4>Force Resolution</h4>
+                    <p><strong>Given:</strong> 50N force at 30°</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            \[
+                            F_x = 50\cos30° \approx 43.3\text{N}
+                            \]
+                        </div>
+                        <div class="col-md-6">
+                            \[
+                            F_y = 50\sin30° = 25\text{N}
+                            \]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>Angle Between Vectors</h4>
+                    <p><strong>Given:</strong> \(\vec{a} = (3,4)\), \(\vec{b} = (4,3)\)</p>
+                    \[
+                    \cos\theta = \frac{24}{5 \times 5} = 0.96 \Rightarrow \theta \approx 16.26°
+                    \]
+                </div>
+
+                <div class="practice-problems mt-5">
+                    <h3>Practice Exercise</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>For vectors \(\vec{u} = (2, -1)\) and \(\vec{v} = (3, 5)\):</h5>
+                            <ol>
+                                <li>Calculate \(\vec{u} \cdot \vec{v}\)</li>
+                                <li>Find the angle between them</li>
+                            </ol>
+                            <button class="btn btn-sm btn-outline-warning" data-toggle="collapse" data-target="#solution1">Show Solution</button>
+                            <div id="solution1" class="collapse mt-3">
+                                <p>1. Dot product:</p>
+                                \[
+                                2(3) + (-1)(5) = 6 - 5 = 1
+                                \]
+                                <p>2. Angle calculation:</p>
+                                \[
+                                \|\vec{u}\| = \sqrt{5},\ \|\vec{v}\| = \sqrt{34}
+                                \]
+                                \[
+                                \theta = \arccos\left(\frac{1}{\sqrt{5 \times 34}}\right) \approx 85.14°
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="lesson4-2.html" class="btn btn-primary shadow">
+                ← Previous Lesson
+            </a>
+            <a href="lesson4-4.html" class="btn btn-primary shadow">
+                Next Lesson →
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-copy bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Dragon Mathematics. All rights reserved.</p>
+            <p class="mb-0">Educational content licensed under CC BY-NC-SA 4.0</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
