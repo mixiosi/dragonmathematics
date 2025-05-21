@@ -1,0 +1,8 @@
+sympy
+scipy
+pint
+matplotlib
+numpy
+requests
+Flask
+google-generative-ai
